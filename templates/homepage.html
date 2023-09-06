@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Main page{% endblock title %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to E-Bookshop</h1>
+  <p class="lead">Discover a world of bestseller books at your fingertips</p>
+  <hr class="my-4">
+  <p>Explore our vast collection and order your favorite books online</p>
+  <a href="{% url 'book_list' %}" class="btn btn-primary btn-lg" role="button">Browse Books</a>
+</div>
+{% endblock content %}

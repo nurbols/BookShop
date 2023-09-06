@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block title %}Books{% endblock title%}
+
+{% block content %} 
+
+
+<div class="row">
+  {% for book in object_list %}
+  <div class="col-md-4 mb-4">
+    <div class="card h-80 border-primary">
+    <img src="{{ book.photo.url }}" class="card-img-top" alt="{{ photo.title }}" style="height: 300px; object-fit: cover ;">
+     <div class="card-body">
+    <h5 class="card-title">{{ book.title}} </h5>
+    <h6 class="card-author"> {{ book.author }} </h6>
+    <p class = "card-price">Price: {{ book.price }}</p> 
+    <p class="card-text">Product details: {{ book.product_details }} </p>
+    <a href="{% url 'book_detail'  book.pk %}" class="btn btn-primary" role= 'button'> Order book </a> 
+     </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}
+
+
